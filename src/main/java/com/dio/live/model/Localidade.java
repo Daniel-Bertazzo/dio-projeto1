@@ -2,6 +2,8 @@ package com.dio.live.model;
 
 import lombok.*;
 
+import javax.persistence.OneToMany;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -12,5 +14,8 @@ public class Localidade {
 
     private long id;
     private String descricao;
+
+    @OneToMany
+    private NivelAcesso nivelAcesso;
 
 }
