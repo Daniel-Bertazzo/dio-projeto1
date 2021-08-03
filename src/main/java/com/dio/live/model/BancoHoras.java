@@ -14,24 +14,24 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
-public class Movimentacao {
+public class BancoHoras {
 
+    @Embeddable
     @AllArgsConstructor
     @NoArgsConstructor
     @EqualsAndHashCode
-    @Embeddable
-    public class MovimentacaoId implements Serializable {
+    public class BancoHorasId implements Serializable {
+        private long idBancoHoras;
         private long idMovimento;
         private long idUsuario;
     }
 
     @EmbeddedId
-    private MovimentacaoId id;
+    private BancoHorasId id;
 
-    private LocalDateTime dataEntrada;
-    private LocalDateTime dataSaida;
-    private BigDecimal periodoPermanencia;
-    private Ocorrencia ocorrencia;
-    private Calendario calendario;
+    private CategoriaUsuario categoriaUsuario;
+    private LocalDateTime dataTrabalhada;
+    private BigDecimal quantidadeHorasTrabalhadas;
+    private BigDecimal saldoHorasTrabalhadas;
 
 }
