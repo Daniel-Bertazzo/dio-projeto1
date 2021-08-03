@@ -2,6 +2,7 @@ package com.dio.live.model;
 
 import lombok.*;
 
+import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -14,13 +15,21 @@ import java.time.LocalDateTime;
 public class Usuario {
 
     private long id;
-    private CategoriaUsuario categoriaUsuario;
     private String nome;
-    private Empresa empresa;
-    private NivelAcesso nivelAcesso;
-    private JornadaTrabalho jornadaTrabalho;
     private BigDecimal tolerancia;
     private LocalDateTime inicioJornada;
     private LocalDateTime finalJornada;
+
+    @ManyToOne
+    private CategoriaUsuario categoriaUsuario;
+
+    @ManyToOne
+    private Empresa empresa;
+
+    @ManyToOne
+    private NivelAcesso nivelAcesso;
+
+    @ManyToOne
+    private JornadaTrabalho jornadaTrabalho;
 
 }
