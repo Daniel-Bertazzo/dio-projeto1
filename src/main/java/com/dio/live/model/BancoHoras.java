@@ -16,10 +16,10 @@ import java.time.LocalDateTime;
 @Builder
 public class BancoHoras {
 
-    @Embeddable
     @AllArgsConstructor
     @NoArgsConstructor
     @EqualsAndHashCode
+    @Embeddable
     public class BancoHorasId implements Serializable {
         private long idBancoHoras;
         private long idMovimento;
@@ -29,7 +29,7 @@ public class BancoHoras {
     @EmbeddedId
     private BancoHorasId id;
 
-    private CategoriaUsuario categoriaUsuario;
+    // CategoriaUsuario nao precisa ter -> redundancia de dados
     private LocalDateTime dataTrabalhada;
     private BigDecimal quantidadeHorasTrabalhadas;
     private BigDecimal saldoHorasTrabalhadas;
