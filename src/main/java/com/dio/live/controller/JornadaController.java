@@ -34,4 +34,5 @@ public class JornadaController {
                 .orElseThrow(() -> new Exception("Jornada nao encontrada."))
         );
     }
+
 }
