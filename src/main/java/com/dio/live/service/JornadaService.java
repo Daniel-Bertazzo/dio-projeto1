@@ -5,6 +5,9 @@ import com.dio.live.repository.JornadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class JornadaService {
 
@@ -20,5 +23,11 @@ public class JornadaService {
         return jornadaRepository.save(jornadaTrabalho);
     }
 
+    public List<JornadaTrabalho> findAll() {
+        return jornadaRepository.findAll();
+    }
 
+    public Optional<JornadaTrabalho> getById(Long idJornada) {
+        return jornadaRepository.findById(idJornada);
+    }
 }

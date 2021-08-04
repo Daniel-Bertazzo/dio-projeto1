@@ -19,10 +19,6 @@ public class Usuario {
 
     @Id
     private long id;
-    private String nome;
-    private BigDecimal tolerancia;
-    private LocalDateTime inicioJornada;
-    private LocalDateTime finalJornada;
 
     @ManyToOne
     private CategoriaUsuario categoriaUsuario;
@@ -35,5 +31,11 @@ public class Usuario {
 
     @ManyToOne
     private JornadaTrabalho jornadaTrabalho;
+
+    private String nome;
+    private BigDecimal tolerancia;
+    private LocalDateTime inicioJornada;
+    private LocalDateTime finalJornada;
+
 
 }
