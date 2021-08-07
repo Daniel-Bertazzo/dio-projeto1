@@ -41,8 +41,8 @@ public class JornadaController {
         return jornadaService.updateJornada(jornadaTrabalho);
     }
 
-    @GetMapping("/{idJornada}")
-    public ResponseEntity<JornadaTrabalho> deleteById(@PathVariable("idJornada") Long idJornada) throws Exception {
+    @DeleteMapping("/{idJornada}")
+    public ResponseEntity deleteById(@PathVariable("idJornada") Long idJornada) throws Exception {
         try {
             jornadaService.deleteJornada(idJornada);
         } catch (Exception e) {
